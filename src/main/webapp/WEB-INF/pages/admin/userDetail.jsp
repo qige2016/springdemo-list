@@ -29,20 +29,16 @@
             <td>${user.id}</td>
         </tr>
         <tr>
-            <th>昵称</th>
-            <td>${user.nickname}</td>
-        </tr>
-        <tr>
-            <th>姓</th>
-            <td>${user.lastName}</td>
-        </tr>
-        <tr>
-            <th>名</th>
-            <td>${user.firstName}</td>
+            <th>用户名</th>
+            <td>${user.username}</td>
         </tr>
         <tr>
             <th>密码</th>
             <td>${user.password}</td>
+        </tr>
+        <tr>
+            <th>邮箱</th>
+            <td>${user.email}</td>
         </tr>
     </table>
 </div>

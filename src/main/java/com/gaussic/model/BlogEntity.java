@@ -1,12 +1,10 @@
 package com.gaussic.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 /**
- * Created by dzkan on 2016/3/8.
+ * Created by Administrator on 2017/6/22.
  */
 @Entity
 @Table(name = "blog", schema = "springdemo", catalog = "")
@@ -14,7 +12,6 @@ public class BlogEntity {
     private int id;
     private String title;
     private String content;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pubDate;
     private UserEntity userByUserId;
 
@@ -39,7 +36,7 @@ public class BlogEntity {
     }
 
     @Basic
-    @Column(name = "content", nullable = true, length = 255)
+    @Column(name = "content", nullable = false, length = 255)
     public String getContent() {
         return content;
     }

@@ -42,7 +42,7 @@
                 <input type="text" class="form-control" name="username" placeholder="用户名" >
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" name="password1" placeholder="密码" >
+                <input type="password" class="form-control" name="password" id="password1" placeholder="密码" >
             </div>
             <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
 

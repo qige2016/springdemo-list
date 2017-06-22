@@ -1,19 +1,30 @@
 package com.gaussic.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 
 /**
- * Created by dzkan on 2016/3/8.
+ * Created by Administrator on 2017/6/22.
  */
 @Entity
 @Table(name = "user", schema = "springdemo", catalog = "")
 public class UserEntity {
     private int id;
-    private String nickname;
+
+    @NotNull
+    @Size(min=2, max=10, message="用户名长度只能在2-10之间")
+    private String username;
+
+    @NotNull
+    @Size (min=6, max=12, message="密码长度只能在6-12之间")
     private String password;
-    private String firstName;
-    private String lastName;
+
+    @NotNull
+    @Pattern(regexp="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", message="邮件格式错误")
+    private String email;
     private Collection<BlogEntity> blogsById;
 
     @Id
@@ -27,13 +38,13 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "nickname", nullable = false, length = 45)
-    public String getNickname() {
-        return nickname;
+    @Column(name = "username", nullable = false, length = 45)
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Basic
@@ -47,23 +58,13 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "first_name", nullable = true, length = 45)
-    public String getFirstName() {
-        return firstName;
+    @Column(name = "email", nullable = false, length = 45)
+    public String getEmail() {
+        return email;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    @Basic
-    @Column(name = "last_name", nullable = true, length = 45)
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -74,10 +75,9 @@ public class UserEntity {
         UserEntity that = (UserEntity) o;
 
         if (id != that.id) return false;
-        if (nickname != null ? !nickname.equals(that.nickname) : that.nickname != null) return false;
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
-        if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
 
         return true;
     }
@@ -85,10 +85,9 @@ public class UserEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (nickname != null ? nickname.hashCode() : 0);
+        result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 

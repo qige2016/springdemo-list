@@ -33,7 +33,7 @@
             <label for="userByUserId.id">作者:</label>
             <select class="form-control" id="userByUserId.id" name="userByUserId.id">
                 <c:forEach items="${userList}" var="user">
-                    <option value="${user.id}">${user.nickname}, ${user.firstName} ${user.lastName}</option>
+                    <option value="${user.id}">${user.username}</option>
                 </c:forEach>
             </select>
         </div>

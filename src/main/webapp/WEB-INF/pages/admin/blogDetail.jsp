@@ -35,7 +35,7 @@
         </tr>
         <tr>
             <th>作者</th>
-            <td>${blog.userByUserId.nickname}, ${blog.userByUserId.firstName} ${blog.userByUserId.lastName}</td>
+            <td>${blog.userByUserId.username}</td>
         </tr>
         <tr>
             <th>内容</th>

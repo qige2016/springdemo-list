@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -35,12 +37,12 @@
         </div>
         <h3>欢迎注册</h3>
         <p>创建一个新账户</p>
-        <form class="m-t" role="form" action="/">
+        <form:form class="m-t" action="/registerP" method="post" commandName="user" role="form">
             <div class="form-group">
                 <input type="text" class="form-control" name="username" placeholder="请输入用户名" >
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" name="password1" id="password1" placeholder="请输入密码" >
+                <input type="password" class="form-control" name="password" id="password1" placeholder="请输入密码" >
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" name="password2" placeholder="请再次输入您的密码" >
@@ -59,7 +61,7 @@
             <p class="text-muted text-center"><small>已经有账户了？</small><a href="login">点此登录</a>
             </p>
 
-        </form>
+        </form:form>
     </div>
 </div>
 <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>

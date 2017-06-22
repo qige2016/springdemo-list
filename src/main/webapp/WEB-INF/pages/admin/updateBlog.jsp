@@ -35,10 +35,10 @@
             <select class="form-control" id="userByUserId.id" name="userByUserId.id">
                 <c:forEach items="${userList}" var="user">
                     <c:if test="${user.id==blog.userByUserId.id}">
-                        <option value="${user.id}" selected="selected">${user.nickname}, ${user.firstName} ${user.lastName}</option>
+                        <option value="${user.id}" selected="selected">${user.username}</option>
                     </c:if>
                     <c:if test="${user.id!=blog.userByUserId.id}">
-                        <option value="${user.id}">${user.nickname}, ${user.firstName} ${user.lastName}</option>
+                        <option value="${user.id}">${user.username}</option>
                     </c:if>
                 </c:forEach>
             </select>

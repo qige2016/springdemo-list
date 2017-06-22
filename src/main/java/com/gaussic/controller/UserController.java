@@ -47,8 +47,7 @@ public class UserController {
 
         // 数据库中添加一个用户，该步暂时不会刷新缓存
         //userRepository.save(userEntity);
-        System.out.println(userEntity.getFirstName());
-        System.out.println(userEntity.getLastName());
+        System.out.println(userEntity.getUsername());
 
         // 数据库中添加一个用户，并立即刷新缓存
         userRepository.saveAndFlush(userEntity);
@@ -88,8 +87,7 @@ public class UserController {
     public String updateUserPost(@ModelAttribute("userP") UserEntity user) {
 
         // 更新用户信息
-        userRepository.updateUser(user.getNickname(), user.getFirstName(),
-                user.getLastName(), user.getPassword(), user.getId());
+        userRepository.updateUser(user.getUsername(), user.getPassword(), user.getId());
         userRepository.flush(); // 刷新缓冲区
         return "redirect:/admin/users";
     }

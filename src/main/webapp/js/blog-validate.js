@@ -5,7 +5,7 @@
 				"required":true,		//必填字段
 				"rangelength":[2,10]
 			},
-			"password1":{
+			"password":{
 				"required":true,
 				"rangelength":[6,12]
 			},
@@ -26,7 +26,7 @@
 				"required":"用户名不能为空哦",
 				"rangelength":"请输入2-10位用户名"
 			},
-			"password1":{
+			"password":{
 				"required":"密码不能为空哦",
 				"rangelength":"请输入6-12位密码"
 			},

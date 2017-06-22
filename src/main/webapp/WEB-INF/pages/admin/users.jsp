@@ -38,18 +38,18 @@
         <table class="table table-bordered table-striped">
             <tr>
                 <th>ID</th>
-                <th>昵称</th>
-                <th>姓名</th>
+                <th>用户名</th>
                 <th>密码</th>
+                <th>邮箱</th>
                 <th>操作</th>
             </tr>
 
             <c:forEach items="${userList}" var="user">
                 <tr>
                     <td>${user.id}</td>
-                    <td>${user.nickname}</td>
-                    <td>${user.firstName} ${user.lastName}</td>
+                    <td>${user.username}</td>
                     <td>${user.password}</td>
+                    <td>${user.email}</td>
                     <td>
                         <a href="/admin/users/show/${user.id}" type="button" class="btn btn-sm btn-success">详情</a>
                         <a href="/admin/users/update/${user.id}" type="button" class="btn btn-sm btn-warning">修改</a>

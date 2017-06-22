@@ -26,20 +26,16 @@
 
     <form:form action="/admin/users/updateP" method="post" commandName="userP" role="form">
         <div class="form-group">
-            <label for="firstName">昵称:</label>
-            <input type="text" class="form-control" id="nickname" name="nickname" placeholder="输入昵称:"/>
-        </div>
-        <div class="form-group">
-            <label for="lastName">姓:</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="输入姓:"/>
-        </div>
-        <div class="form-group">
-            <label for="firstName">名:</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="输入名:"/>
+            <label for="username">用户名:</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="输入用户名:"/>
         </div>
         <div class="form-group">
             <label for="password">密码:</label>
             <input type="text" class="form-control" id="password" name="password" placeholder="输入密码:"/>
+        </div>
+        <div class="form-group">
+            <label for="email">邮箱:</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="输入邮箱:"/>
         </div>
         <!-- 把 id 一并写入 userP 中 -->
         <input type="hidden" id="id" name="id" value="${user.id}"/>
